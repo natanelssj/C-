@@ -45,9 +45,12 @@ namespace C25_Ex03__Aviv_208667089_Natanel_314684697
             }
         }
 
-        void AddAir(float CurrentAir, float MaxAir)
+        void AddAir(float CurrentAir, float MaxAir,float AddAirWheel)
         {
-
+            if (CurrentAir+AddAirWheel<=MaxAir)
+            {
+                CurrentAir +=AddAirWheel ;
+            }
         }
     }
 }

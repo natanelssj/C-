@@ -5,16 +5,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace C25_Ex03__Aviv_208667089_Natanel_314684697
+namespace Ex03.GarageLogic
 {
     public abstract class Vichle
     {
         private string m_Model;
         public string m_LicensePlate;
         private float m_EnergyPrecents;
+        private int m_WheelsAmount;
 
 
-
+        public enum Status
+        {
+            InFix,
+            Fixed,
+            Payed
+        }
 
         public string LicensePlate
         {
@@ -50,9 +56,18 @@ namespace C25_Ex03__Aviv_208667089_Natanel_314684697
         
         }
 
+        public int WheelsAmount
+        {
+            get { return m_WheelsAmount; }
+            set {m_WheelsAmount=value }
+        }
 
 
+        public abstract void SetAirPressure(float i_AirPressure);
+        
+        public abstract void PutPressure(float i_Pressure);
 
+        public abstract float GetAirPressure();
 
         private bool CheckNumberOfLicense(string m_licensePlate)
         {
